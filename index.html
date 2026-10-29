@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f5ef">
+    <meta name="description" content="Boss Custom Tailor is your neighbourhood custom tailoring studio for perfectly fitted clothes, thoughtful details, and a personal touch.">
+    <title>Boss Custom Tailor — Made to Fit You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #19372f;
+            --ink-soft: #49645c;
+            --cream: #f7f5ef;
+            --paper: #fffefa;
+            --orange: #c76b43;
+            --line: #e6e3d9;
+            --serif: "Playfair Display", Georgia, serif;
+            --sans: "DM Sans", Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--cream);
+            font-family: var(--sans);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        button, input, select, textarea { font: inherit; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+        .container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+
+        .announcement {
+            padding: 10px 20px;
+            color: #fff;
+            background: var(--ink);
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: .08em;
+        }
+
+        .announcement span { color: #f0ad83; }
+
+        .site-header {
+            position: sticky;
+            z-index: 10;
+            top: 0;
+            background: rgba(247, 245, 239, .94);
+            border-bottom: 1px solid rgba(25, 55, 47, .08);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--ink);
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .brand-mark {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1px;
+            border: 1px solid #c6a15b;
+            border-radius: 50%;
+            color: var(--ink);
+            background: #fffefa;
+        }
+
+        .crown-symbol { width: 20px; height: 15px; color: #b68b3d; }
+        .crown-symbol svg { display: block; width: 100%; height: 100%; }
+        .brand-boss { font-family: var(--serif); font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+        .brand-wordmark { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+        .brand-custom { color: var(--ink); font-family: var(--sans); font-size: 16px; font-weight: 800; letter-spacing: .12em; line-height: 1; }
+        .brand-tailor { display: flex; align-items: center; gap: 5px; color: #a74e2e; font-family: var(--serif); font-size: 13px; font-weight: 700; letter-spacing: .19em; line-height: 1; }
+        .brand-tailor::before { width: 19px; height: 1px; background: #c6a15b; content: ""; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: var(--ink-soft);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover { color: var(--orange); }
+
+        .button {
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 22px;
+            border: 1px solid var(--ink);
+            border-radius: 3px;
+            color: white;
+            background: var(--ink);
+            font-size: 13px;
+            font-weight: 700;
+            transition: background .2s, color .2s, transform .2s;
+            cursor: pointer;
+        }
+
+        .button:hover { background: #285447; transform: translateY(-2px); }
+        .button-outline { color: var(--ink); background: transparent; }
+        .button-outline:hover { color: white; }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .hero { padding: 62px 0 72px; }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 72px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--orange);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before { width: 26px; height: 1px; background: currentColor; content: ""; }
+
+        h1, h2, h3, p { margin-top: 0; }
+
+        h1 {
+            max-width: 520px;
+            margin: 20px 0;
+            font-family: var(--serif);
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 500;
+            letter-spacing: -.045em;
+            line-height: 1.06;
+        }
+
+        h1 em { color: var(--orange); font-weight: 500; }
+
+        .hero-copy {
+            max-width: 450px;
+            margin-bottom: 28px;
+            color: var(--ink-soft);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+        .hero-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 35px;
+            color: var(--ink-soft);
+            font-size: 12px;
+        }
+
+        .avatar-stack { display: flex; padding-left: 6px; }
+
+        .avatar-stack span {
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            margin-left: -6px;
+            border: 2px solid var(--cream);
+            border-radius: 50%;
+            color: white;
+            background: #a26b4d;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .avatar-stack span:nth-child(2) { background: #506f62; }
+        .avatar-stack span:nth-child(3) { background: #b68b58; }
+        .hero-note strong { color: var(--ink); }
+
+        .hero-visual { position: relative; min-height: 500px; }
+
+        .hero-image {
+            position: absolute;
+            inset: 0 22px 18px 34px;
+            overflow: hidden;
+            border-radius: 46% 46% 4px 4px;
+            background: #d7d0c0;
+        }
+
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+        .hero-image::after {
+            position: absolute;
+            inset: 45% 0 0;
+            background: linear-gradient(transparent, rgba(20, 40, 33, .28));
+            content: "";
+        }
+
+        .image-tag {
+            position: absolute;
+            right: 0;
+            bottom: 56px;
+            z-index: 1;
+            width: 154px;
+            padding: 18px;
+            color: white;
+            background: var(--ink);
+            box-shadow: 0 12px 30px rgba(25, 55, 47, .16);
+        }
+
+        .image-tag strong { display: block; margin-bottom: 5px; font-family: var(--serif); font-size: 19px; }
+        .image-tag span { font-size: 10px; letter-spacing: .08em; }
+
+        .stitch-mark {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            color: var(--orange);
+            font-size: 30px;
+            transform: rotate(-24deg);
+        }
+
+        .trust-strip {
+            padding: 21px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 254, 250, .55);
+        }
+
+        .trust-items { display: flex; justify-content: space-between; gap: 18px; }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--ink-soft);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .trust-icon { color: var(--orange); font-size: 17px; }
+
+        .section { padding: 92px 0; }
+
+        .section-heading { max-width: 610px; margin: 0 auto 44px; text-align: center; }
+        .section-heading .eyebrow { justify-content: center; }
+
+        h2 {
+            margin: 15px 0 12px;
+            font-family: var(--serif);
+            font-size: clamp(34px, 4vw, 48px);
+            font-weight: 500;
+            letter-spacing: -.035em;
+            line-height: 1.15;
+        }
+
+        .section-heading p { margin-bottom: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.75; }
+
+        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+        .service-card {
+            min-height: 248px;
+            padding: 30px 27px;
+            border: 1px solid var(--line);
+            background: var(--paper);
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(25, 55, 47, .07); }
+
+        .service-number { color: var(--orange); font-family: var(--serif); font-size: 17px; }
+        .service-card h3 { margin: 22px 0 10px; font-family: var(--serif); font-size: 23px; font-weight: 600; }
+        .service-card p { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.75; }
+
+        .collection { background: var(--paper); }
+        .collection .section-heading { margin-bottom: 30px; }
+        .offer-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            margin: 0 auto 28px;
+            padding: 13px 18px;
+            border: 1px solid #e8cbb9;
+            color: #854b32;
+            background: #fbf0e9;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .offer-banner strong { color: #75391f; }
+        .collection-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+        .filter-button {
+            min-height: 40px;
+            padding: 0 18px;
+            border: 1px solid var(--line);
+            border-radius: 2px;
+            color: var(--ink-soft);
+            background: transparent;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .filter-button[aria-pressed="true"], .filter-button:hover { border-color: var(--ink); color: white; background: var(--ink); }
+        .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .product-card { overflow: hidden; border: 1px solid var(--line); background: var(--cream); }
+        .product-art {
+            position: relative;
+            height: 230px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 16px;
+            color: white;
+            isolation: isolate;
+        }
+        .product-art::after {
+            position: absolute;
+            z-index: -1;
+            inset: 65% 0 0;
+            background: linear-gradient(transparent, rgba(20, 32, 27, .7));
+            content: "";
+        }
+        .product-art img {
+            position: absolute;
+            z-index: -2;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            background: #e8e4da;
+        }
+        .product-art span:first-child { font-family: var(--serif); font-size: 18px; letter-spacing: .03em; text-shadow: 0 1px 5px rgba(0, 0, 0, .35); }
+        .product-art span:last-child { flex-shrink: 0; padding: 6px 8px; background: rgba(25, 55, 47, .72); font-size: 8px; font-weight: 700; letter-spacing: .09em; }
+        .product-info { padding: 17px; }
+        .product-category { margin: 0 0 7px; color: var(--orange); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+        .product-info h3 { min-height: 48px; margin: 0 0 6px; font-family: var(--serif); font-size: 18px; font-weight: 600; }
+        .product-description { min-height: 37px; margin: 0 0 14px; color: var(--ink-soft); font-size: 11px; line-height: 1.6; }
+        .fabric-colors { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; margin: 0 0 14px; }
+        .fabric-colors-label { width: 100%; color: var(--ink-soft); font-size: 10px; font-weight: 600; }
+        .fabric-swatch {
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            border: 2px solid var(--paper);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px var(--line);
+            cursor: pointer;
+        }
+        .fabric-swatch[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--ink); }
+        .fabric-color-name { color: var(--ink-soft); font-size: 10px; }
+        .product-price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+        .product-price { color: var(--ink); font-size: 15px; font-weight: 700; }
+        .product-original-price { color: #8b8b83; font-size: 11px; text-decoration: line-through; }
+        .discount-badge { padding: 4px 6px; color: #854b32; background: #f5dfd1; font-size: 9px; font-weight: 700; }
+        .product-card .button { width: 100%; min-height: 40px; padding: 0 12px; font-size: 11px; }
+        .collection-note { margin: 20px 0 0; color: var(--ink-soft); text-align: center; font-size: 11px; line-height: 1.7; }
+
+        .process { color: white; background: var(--ink); }
+        .process .eyebrow { color: #f0ad83; }
+        .process .section-heading p { color: #c4d1cb; }
+        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+
+        .process-step { padding-top: 24px; border-top: 1px solid rgba(255,255,255,.25); }
+        .process-step span { color: #f0ad83; font-family: var(--serif); font-size: 18px; }
+        .process-step h3 { margin: 16px 0 9px; font-family: var(--serif); font-size: 22px; font-weight: 500; }
+        .process-step p { max-width: 290px; margin: 0; color: #c4d1cb; font-size: 13px; line-height: 1.75; }
+
+        .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        .quote-card { padding: 30px; border: 1px solid var(--line); background: var(--paper); }
+        .stars { margin-bottom: 16px; color: var(--orange); letter-spacing: .12em; }
+        .quote-card blockquote { margin: 0 0 23px; font-family: var(--serif); font-size: 20px; line-height: 1.55; }
+        .quote-person { color: var(--ink-soft); font-size: 12px; }
+        .quote-person strong { display: block; margin-bottom: 4px; color: var(--ink); font-size: 13px; }
+
+        .booking { padding-top: 25px; }
+        .booking-panel {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            overflow: hidden;
+            background: #ebe8de;
+        }
+
+        .booking-copy { padding: 52px; }
+        .booking-copy h2 { max-width: 360px; }
+        .booking-copy > p { max-width: 360px; color: var(--ink-soft); font-size: 14px; line-height: 1.8; }
+        .booking-detail { display: flex; gap: 12px; margin-top: 22px; color: var(--ink-soft); font-size: 12px; line-height: 1.6; }
+        .booking-detail strong { display: block; color: var(--ink); }
+        .booking-detail a { text-decoration: underline; text-decoration-color: rgba(73, 100, 92, .4); text-underline-offset: 3px; }
+        .booking-detail a:hover { color: var(--orange); }
+        .detail-icon { width: 20px; height: 20px; flex: 0 0 20px; color: var(--orange); }
+        .detail-icon svg, .footer-contact-icon { display: block; width: 100%; height: 100%; }
+
+        .booking-form { padding: 46px; background: var(--paper); }
+        .booking-form h3 { margin: 0 0 6px; font-family: var(--serif); font-size: 26px; font-weight: 600; }
+        .form-intro { margin-bottom: 23px; color: var(--ink-soft); font-size: 12px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .field { display: flex; flex-direction: column; gap: 7px; }
+        .field-wide { grid-column: 1 / -1; }
+        .field label { color: var(--ink); font-size: 11px; font-weight: 700; }
+        .field input, .field select, .field textarea {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 12px;
+            border: 1px solid var(--line);
+            border-radius: 2px;
+            outline: none;
+            color: var(--ink);
+            background: #fff;
+            font-size: 12px;
+        }
+        .field textarea { min-height: 74px; resize: vertical; }
+        .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--ink-soft); }
+        .booking-form .button { width: 100%; margin-top: 17px; }
+        .form-message { min-height: 18px; margin: 12px 0 0; color: var(--ink-soft); font-size: 12px; line-height: 1.5; }
+
+        .site-footer { padding: 28px 0; color: #c4d1cb; background: #142d26; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            color: white;
+            gap: 9px;
+            line-height: 1;
+            white-space: nowrap;
+        }
+        .footer-brand .brand-mark { color: white; background: transparent; }
+        .footer-brand .brand-custom { color: white; }
+        .footer-brand .brand-tailor { color: #f0ad83; }
+        .footer-inner p { margin: 0; font-size: 11px; }
+        .footer-links { display: flex; gap: 20px; font-size: 11px; }
+        .footer-links a:hover { color: white; }
+        .footer-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 24px;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,.16);
+            font-size: 11px;
+            line-height: 1.6;
+        }
+        .footer-contact a:hover { color: white; text-decoration: underline; text-underline-offset: 3px; }
+        .footer-contact a { display: inline-flex; align-items: center; gap: 7px; }
+        .footer-contact-icon { width: 15px; height: 15px; flex: 0 0 15px; color: #f0ad83; }
+
+        @media (max-width: 800px) {
+            .container { width: min(100% - 36px, 600px); }
+            .nav { min-height: 68px; }
+            .menu-toggle { display: grid; place-items: center; }
+            .nav-cta { display: none; }
+            .nav-links {
+                position: absolute;
+                top: 68px;
+                right: 0;
+                left: 0;
+                display: none;
+                align-items: stretch;
+                gap: 0;
+                padding: 8px 18px 16px;
+                border-bottom: 1px solid var(--line);
+                background: var(--cream);
+            }
+            .nav-links.is-open { display: flex; flex-direction: column; }
+            .nav-links a { padding: 13px 5px; }
+            .hero { padding: 45px 0 55px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+            .hero-visual { min-height: 420px; }
+            .hero-image { inset: 0 24px 12px 24px; }
+            .trust-items { justify-content: center; flex-wrap: wrap; gap: 16px 28px; }
+            .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .section { padding: 70px 0; }
+            .booking { padding-top: 0; }
+            .booking-panel { grid-template-columns: 1fr; }
+            .booking-copy { padding: 38px; }
+            .booking-form { padding: 34px 38px; }
+        }
+
+        @media (max-width: 560px) {
+            .container { width: calc(100% - 32px); }
+            .announcement { font-size: 10px; }
+            .brand-mark { width: 43px; height: 43px; }
+            .brand-custom { font-size: 14px; }
+            .brand-tailor { font-size: 12px; }
+            h1 { font-size: clamp(46px, 13vw, 60px); }
+            .hero-visual { min-height: 350px; }
+            .hero-image { inset: 0 18px 12px; }
+            .image-tag { right: 0; bottom: 37px; width: 135px; padding: 14px; }
+            .trust-item { font-size: 11px; }
+            .service-grid, .process-grid, .testimonial-grid { grid-template-columns: 1fr; }
+            .product-grid { grid-template-columns: 1fr; }
+            .product-art { height: 230px; }
+            .service-card { min-height: 0; }
+            .process-grid { gap: 25px; }
+            .quote-card { padding: 24px; }
+            .booking-copy { padding: 32px 24px; }
+            .booking-form { padding: 28px 22px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .field-wide { grid-column: auto; }
+            .footer-inner { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement">A little more you in every stitch. <span>Book your fitting today.</span></div>
+
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="brand" href="#home" aria-label="Boss Custom Tailor home">
+                <span class="brand-mark">
+                    <span class="crown-symbol" aria-hidden="true">
+                        <svg viewBox="0 0 32 24" fill="none">
+                            <path d="M3 19 1.5 6l7.2 5.2L16 2l7.3 9.2L30.5 6 29 19H3Z" fill="currentColor"/>
+                            <path d="M3 21h26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="1.5" cy="5" r="1.5" fill="currentColor"/>
+                            <circle cx="16" cy="1.5" r="1.5" fill="currentColor"/>
+                            <circle cx="30.5" cy="5" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    <span class="brand-boss">Boss</span>
+                </span>
+                <span class="brand-wordmark">
+                    <span class="brand-custom">CUSTOM</span>
+                    <span class="brand-tailor">TAILOR</span>
+                </span>
+            </a>
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="#services">What we make</a>
+                <a href="#collection">Suit collection</a>
+                <a href="#process">How it works</a>
+                <a href="#stories">Our customers</a>
+            </div>
+            <a class="button nav-cta" href="#book">Book a fitting <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-grid container">
+                <div>
+                    <span class="eyebrow">Your neighbourhood tailor</span>
+                    <h1>Good clothes.<br><em>Made for you.</em></h1>
+                    <p class="hero-copy">A perfect fit feels different. From everyday favourites to your big-day outfit, we stitch each piece to fit your style, your shape, and your life.</p>
+                    <div class="hero-actions">
+                        <a class="button" href="#book">Book your fitting <span aria-hidden="true">↗</span></a>
+                        <a class="button button-outline" href="#services">Explore our work</a>
+                    </div>
+                    <div class="hero-note">
+                        <div class="avatar-stack" aria-hidden="true"><span>R</span><span>A</span><span>M</span></div>
+                        <span><strong>A fit that feels like you.</strong><br>Made with care, one stitch at a time.</span>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <span class="stitch-mark" aria-hidden="true">✳</span>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Beautifully made clothes displayed in a tailoring studio">
+                    </div>
+                    <div class="image-tag"><strong>Made to measure</strong><span>YOUR STYLE, YOUR FIT</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="trust-strip">
+            <div class="trust-items container">
+                <div class="trust-item"><span class="trust-icon" aria-hidden="true">✳</span> Personal measurements</div>
+                <div class="trust-item"><span class="trust-icon" aria-hidden="true">✂</span> Thoughtful hand-finishing</div>
+                <div class="trust-item"><span class="trust-icon" aria-hidden="true">♡</span> Made with care</div>
+                <div class="trust-item"><span class="trust-icon" aria-hidden="true">↺</span> Fitting adjustments</div>
+            </div>
+        </div>
+
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">A stitch for every occasion</span>
+                    <h2>Wear what feels like you.</h2>
+                    <p>Bring us an idea, a favourite fabric, or that outfit you can't find anywhere. We'll help you make it yours.</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card">
+                        <span class="service-number">01 / Everyday</span>
+                        <h3>Your daily favourites</h3>
+                        <p>Shirts, trousers, kurtas and more, made for comfort and a fit that feels just right.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-number">02 / Occasion</span>
+                        <h3>Made for the moment</h3>
+                        <p>Wedding wear, celebrations and special outfits with the details that make them yours.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-number">03 / Alterations</span>
+                        <h3>A better fit, again</h3>
+                        <p>Thoughtful alterations and repairs to bring new life, comfort and confidence to your clothes.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section collection" id="collection">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">The Boss collection</span>
+                    <h2>A suit for every story.</h2>
+                    <p>Explore made-to-measure styles for men, women and kids. Every piece is tailored to your measurements and finishing preferences.</p>
+                </div>
+                <div class="offer-banner">
+                    <span aria-hidden="true">✦</span>
+                    <span><strong>Premium suit offer: 10% off</strong> selected premium styles</span>
+                </div>
+                <div class="collection-filters" role="group" aria-label="Filter suits by collection">
+                    <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All styles</button>
+                    <button class="filter-button" type="button" data-filter="men" aria-pressed="false">Men</button>
+                    <button class="filter-button" type="button" data-filter="women" aria-pressed="false">Women</button>
+                    <button class="filter-button" type="button" data-filter="kids" aria-pressed="false">Kids</button>
+                </div>
+                <div class="product-grid" id="product-grid" aria-live="polite"></div>
+                <p class="collection-note">Prices shown in Thai Baht (THB). Prices are starting estimates; final quotes depend on fabric, design details and fitting requirements. Premium offer applies to marked styles.</p>
+            </div>
+        </section>
+
+        <section class="section process" id="process">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Simple as one, two, stitch</span>
+                    <h2>A good fit starts with a conversation.</h2>
+                    <p>No guesswork, no fuss. Just a friendly, personal process from first fitting to final stitch.</p>
+                </div>
+                <div class="process-grid">
+                    <article class="process-step">
+                        <span>01</span>
+                        <h3>Tell us what you have in mind</h3>
+                        <p>Visit the studio, share your idea, and we'll help pick the style and fabric details.</p>
+                    </article>
+                    <article class="process-step">
+                        <span>02</span>
+                        <h3>We'll take your measurements</h3>
+                        <p>Your measurements and preferences guide every cut, seam and finishing touch.</p>
+                    </article>
+                    <article class="process-step">
+                        <span>03</span>
+                        <h3>Try it on. Make it yours.</h3>
+                        <p>Come in for a fitting, fine-tune the details, and take home a piece made for you.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="stories">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Kind words, close to home</span>
+                    <h2>It feels different when it fits.</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <article class="quote-card">
+                        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote>“I brought in a picture and a piece of fabric. They understood exactly what I wanted. The fit was lovely.”</blockquote>
+                        <div class="quote-person"><strong>Priya S.</strong>A custom festive outfit</div>
+                    </article>
+                    <article class="quote-card">
+                        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote>“Finally, shirts that fit properly at the shoulders and sleeves. Really thoughtful work and a lovely experience.”</blockquote>
+                        <div class="quote-person"><strong>Arjun K.</strong>Everyday shirts, made to measure</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section booking" id="book">
+            <div class="container">
+                <div class="booking-panel">
+                    <div class="booking-copy">
+                        <span class="eyebrow">Come say hello</span>
+                        <h2>Let's make something that fits.</h2>
+                        <p>Tell us a little about what you need. We'll get back to you to arrange a visit and take it from there.</p>
+                        <div class="booking-detail">
+                            <span class="detail-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                            </span>
+                            <span><strong>Visit our studio</strong><a href="https://www.google.com/maps/search/?api=1&amp;query=198%2F1-3%20Kraisi%2C%20Talat%20Yot%2C%20Phra%20Nakhon%2C%20Bangkok%2010200" target="_blank" rel="noopener noreferrer">198/1-3 Kraisi, Talat Yot,<br>Phra Nakhon, BKK 10200</a></span>
+                        </div>
+                        <div class="booking-detail">
+                            <span class="detail-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c-.2.2-.2.4-.1.6.5.8 1.2 1.5 2 2 .2.1.4.1.6-.1l.7-.7c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5 0 .3-.1 1-.7 1.4-.5.4-1.2.6-2 .4-1-.2-2.3-.8-3.6-2.1s-1.9-2.6-2.1-3.6c-.2-.7 0-1.5.4-2Z"/></svg>
+                            </span>
+                            <span><strong>WhatsApp us</strong><a href="https://wa.me/66931394426" target="_blank" rel="noopener noreferrer">+66 93 139 4426</a></span>
+                        </div>
+                        <div class="booking-detail">
+                            <span class="detail-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+                            </span>
+                            <span><strong>Follow us on Instagram</strong><a href="https://www.instagram.com/bosscutomtailor01/" target="_blank" rel="noopener noreferrer">@bosscutomtailor01</a></span>
+                        </div>
+                        <div class="booking-detail">
+                            <span class="detail-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                            </span>
+                            <span><strong>Shop open</strong>24/7 — Every day</span>
+                        </div>
+                    </div>
+                    <form class="booking-form" id="booking-form">
+                        <h3>Request a fitting</h3>
+                        <p class="form-intro">Share your details and we'll be in touch.</p>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="customer-name">Your name</label>
+                                <input id="customer-name" name="name" type="text" placeholder="e.g. Riya Sharma" autocomplete="name" required>
+                            </div>
+                            <div class="field">
+                                <label for="customer-phone">Phone number</label>
+                                <input id="customer-phone" name="phone" type="tel" placeholder="Your contact number" autocomplete="tel" required>
+                            </div>
+                            <div class="field">
+                                <label for="service-type">What do you need?</label>
+                                <select id="service-type" name="service" required>
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="men-suit">Men's suit</option>
+                                    <option value="women-suit">Women's suit</option>
+                                    <option value="kids-suit">Kids' suit</option>
+                                    <option>Custom outfit</option>
+                                    <option>Everyday wear</option>
+                                    <option>Alterations</option>
+                                    <option>Wedding or occasion wear</option>
+                                    <option>Something else</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="visit-date">Preferred date</label>
+                                <input id="visit-date" name="date" type="date">
+                            </div>
+                            <div class="field field-wide">
+                                <label for="customer-note">Anything else? (optional)</label>
+                                <textarea id="customer-note" name="note" placeholder="Tell us a little about what you have in mind..."></textarea>
+                            </div>
+                        </div>
+                        <button class="button" type="submit">Request a fitting <span aria-hidden="true">↗</span></button>
+                        <p class="form-message" id="form-message" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner container">
+            <a class="footer-brand" href="#home">
+                <span class="brand-mark">
+                    <span class="crown-symbol" aria-hidden="true">
+                        <svg viewBox="0 0 32 24" fill="none">
+                            <path d="M3 19 1.5 6l7.2 5.2L16 2l7.3 9.2L30.5 6 29 19H3Z" fill="currentColor"/>
+                            <path d="M3 21h26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="1.5" cy="5" r="1.5" fill="currentColor"/>
+                            <circle cx="16" cy="1.5" r="1.5" fill="currentColor"/>
+                            <circle cx="30.5" cy="5" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    <span class="brand-boss">Boss</span>
+                </span>
+                <span class="brand-wordmark">
+                    <span class="brand-custom">CUSTOM</span>
+                    <span class="brand-tailor">TAILOR</span>
+                </span>
+            </a>
+            <p>Made with care, one stitch at a time.</p>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#book">Book a fitting</a>
+            </div>
+        </div>
+        <div class="footer-contact container">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=198%2F1-3%20Kraisi%2C%20Talat%20Yot%2C%20Phra%20Nakhon%2C%20Bangkok%2010200" target="_blank" rel="noopener noreferrer">
+                <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                198/1-3 Kraisi, Talat Yot, Phra Nakhon, BKK 10200
+            </a>
+            <a href="https://wa.me/66931394426" target="_blank" rel="noopener noreferrer">
+                <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c-.2.2-.2.4-.1.6.5.8 1.2 1.5 2 2 .2.1.4.1.6-.1l.7-.7c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5 0 .3-.1 1-.7 1.4-.5.4-1.2.6-2 .4-1-.2-2.3-.8-3.6-2.1s-1.9-2.6-2.1-3.6c-.2-.7 0-1.5.4-2Z"/></svg>
+                WhatsApp: +66 93 139 4426
+            </a>
+            <a href="https://www.instagram.com/bosscutomtailor01/" target="_blank" rel="noopener noreferrer">
+                <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+                Instagram: @bosscutomtailor01
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { category: "men", name: "Navy Classic Two-Piece Suit", price: 3500, description: "A clean everyday fit, tailored to your measurements." },
+            { category: "men", name: "Sand Linen Summer Suit", price: 4500, description: "Lightweight, breathable tailoring for warm days." },
+            { category: "men", name: "Charcoal Slim-Fit Suit", price: 5500, description: "A sharp silhouette with a comfortable custom fit." },
+            { category: "men", name: "Midnight Three-Piece Suit", price: 6500, description: "A polished waistcoat look for formal occasions." },
+            { category: "men", name: "Olive Bandhgala Suit", price: 7500, description: "A refined high-collar look with custom details." },
+            { category: "men", name: "Royal Blue Executive Suit", price: 8500, description: "A versatile business style with a personal fit." },
+            { category: "men", name: "Burgundy Textured Wedding Suit", price: 9500, description: "A celebratory look with a rich textured finish." },
+            { category: "men", name: "Black Double-Breasted Suit", price: 12000, description: "A confident classic with a made-to-measure shape." },
+            { category: "men", name: "Premium Charcoal Wool Suit", price: 15000, description: "A refined wool look, tailored with extra care.", premium: true },
+            { category: "men", name: "Emerald Velvet Evening Suit", price: 18000, description: "A statement evening style with custom finishing.", premium: true },
+            { category: "men", name: "Midnight Designer Tuxedo", price: 22000, description: "Formal satin details and a personal fit.", premium: true },
+            { category: "men", name: "Ivory Royal Achkan Suit", price: 28000, description: "Traditional occasion wear with intricate detailing.", premium: true },
+            { category: "men", name: "Wine Hand-Embroidered Sherwani", price: 35000, description: "Made-to-order embroidery for a memorable celebration.", premium: true },
+            { category: "men", name: "Steel Blue Heritage Tuxedo", price: 52000, description: "Luxury fabric and hand-finished formal details.", premium: true },
+            { category: "men", name: "Royal Maroon Wedding Sherwani", price: 65000, description: "Our signature bespoke wedding look, made just for you.", premium: true },
+            { category: "women", name: "Sage Everyday Tailored Suit", price: 3500, description: "An easy, polished fit for everyday wear." },
+            { category: "women", name: "Indigo Classic Salwar Suit", price: 4500, description: "A timeless set tailored for comfort and movement." },
+            { category: "women", name: "Ivory Straight-Cut Kurta Suit", price: 5500, description: "A versatile silhouette with a custom finish." },
+            { category: "women", name: "Charcoal Office Wear Suit", price: 6500, description: "Smart tailoring made to fit your workday." },
+            { category: "women", name: "Blush Anarkali Suit", price: 7500, description: "A graceful occasion style with your choice of details." },
+            { category: "women", name: "Teal Palazzo Suit Set", price: 8500, description: "A relaxed, flowing fit cut to your measurements." },
+            { category: "women", name: "Mustard Festive Embroidered Suit", price: 9500, description: "A celebration-ready suit with delicate embellishment." },
+            { category: "women", name: "Premium Emerald Silk Suit", price: 12000, description: "A polished silk finish made for special moments.", premium: true },
+            { category: "women", name: "Rose Designer Sharara Set", price: 15000, description: "A statement silhouette with tailored finishing.", premium: true },
+            { category: "women", name: "Midnight Velvet Occasion Suit", price: 18000, description: "A rich evening look, made to your preferences.", premium: true },
+            { category: "women", name: "Ruby Handworked Zari Suit", price: 22000, description: "Detailed traditional work with a personal fit.", premium: true },
+            { category: "women", name: "Red Bridal Lehenga Set", price: 28000, description: "A made-to-order bridal look with bespoke details.", premium: true },
+            { category: "women", name: "Maroon Banarasi Bridal Suit", price: 35000, description: "A rich handwoven look with custom bridal finishing.", premium: true },
+            { category: "women", name: "Champagne Designer Couture Gown", price: 42000, description: "A custom occasion gown, carefully fitted and finished.", premium: true },
+            { category: "women", name: "Heritage Gold Bridal Couture", price: 65000, description: "Our signature bridal design with hand-finished detail.", premium: true },
+            { category: "kids", name: "Kids' Classic Suit", price: 3500, description: "A comfortable custom fit for little celebrations." },
+            { category: "kids", name: "Kids' Festive Kurta Set", price: 4500, description: "A bright traditional set for family occasions." },
+            { category: "kids", name: "Kids' Partywear Suit", price: 5500, description: "A smart party look tailored for easy movement." },
+            { category: "kids", name: "Kids' Mini Sherwani", price: 6500, description: "A little celebration style with thoughtful details." },
+            { category: "kids", name: "Kids' Embroidered Set", price: 8500, description: "Special-occasion embroidery and a made-to-measure fit." },
+            { category: "kids", name: "Kids' Premium Wedding Suit", price: 12000, description: "A premium wedding look, tailored just for them." }
+        ];
+
+        const categoryLabels = { men: "Men's suit", women: "Women's suit", kids: "Kids' suit" };
+        const collectionImages = {
+            men: [
+                "photo-1617137968427-85924c800a22",
+                "photo-1594938298603-c8148c4dae35",
+                "photo-1598808503746-f34c53b9323e",
+                "photo-1598033129183-c4f50c736f10",
+                "photo-1507679799987-c73779587ccf",
+                "photo-1519085360753-af0119f7cbe7",
+                "photo-1539533018447-63fcce2678e3",
+                "photo-1592878904946-b3cd8ae243d0",
+                "photo-1603252109303-2751441dd157",
+                "photo-1618354691373-d851c5c3a990",
+                "photo-1618354691229-88d47f285158",
+                "photo-1603252110481-7ba873bf42ab",
+                "photo-1603252109360-909baaf261c7",
+                "photo-1548126032-079a0fb0099d",
+                "photo-1618354691438-25bc04584c23"
+            ],
+            women: [
+                "photo-1595777457583-95e059d581b8",
+                "photo-1594633312681-425c7b97ccd1",
+                "photo-1585487000160-6ebcfceb0d03",
+                "photo-1539109136881-3be0616acf4b",
+                "photo-1529139574466-a303027c1d8b",
+                "photo-1515886657613-9f3515b0c78f",
+                "photo-1509631179647-0177331693ae",
+                "photo-1485230895905-ec40ba36b9bc",
+                "photo-1525507119028-ed4c629a60a3",
+                "photo-1490481651871-ab68de25d43d",
+                "photo-1483985988355-763728e1935b",
+                "photo-1503342217505-b0a15ec3261c",
+                "photo-1548126032-079a0fb0099d",
+                "photo-1534528741775-53994a69daeb",
+                "photo-1543163521-1bf539c55dd2"
+            ],
+            kids: [
+                "photo-1503919005314-30d93d07d823",
+                "photo-1519238263530-99bdd11df2ea",
+                "photo-1503454537195-1dcabb73ffb9"
+            ]
+        };
+        const fabricPalettes = {
+            men: [
+                { name: "Navy", hex: "#1d3153" }, { name: "Charcoal", hex: "#45484a" },
+                { name: "Black", hex: "#171717" }, { name: "Olive", hex: "#69704a" },
+                { name: "Burgundy", hex: "#782f42" }, { name: "Sand", hex: "#c5a879" },
+                { name: "Royal blue", hex: "#315c9b" }, { name: "Ivory", hex: "#eee5d3" }
+            ],
+            women: [
+                { name: "Sage", hex: "#87977b" }, { name: "Indigo", hex: "#384f80" },
+                { name: "Ivory", hex: "#eee5d3" }, { name: "Charcoal", hex: "#45484a" },
+                { name: "Blush", hex: "#d99b9c" }, { name: "Teal", hex: "#27817d" },
+                { name: "Mustard", hex: "#c39a2e" }, { name: "Emerald", hex: "#176c52" },
+                { name: "Rose", hex: "#b86f7d" }, { name: "Midnight", hex: "#222943" },
+                { name: "Ruby", hex: "#a42e40" }, { name: "Maroon", hex: "#722e3d" },
+                { name: "Champagne", hex: "#c6aa80" }, { name: "Gold", hex: "#b7964b" }
+            ],
+            kids: [
+                { name: "Navy", hex: "#1d3153" }, { name: "Sky blue", hex: "#79a9cd" },
+                { name: "Burgundy", hex: "#782f42" }, { name: "Ivory", hex: "#eee5d3" },
+                { name: "Emerald", hex: "#176c52" }
+            ]
+        };
+        const productGrid = document.querySelector("#product-grid");
+        const formatPrice = (amount) => `฿${new Intl.NumberFormat("en-US").format(amount)}`;
+        const categoryIndexes = { men: 0, women: 0, kids: 0 };
+
+        productGrid.innerHTML = products.map((product) => {
+            const categoryIndex = categoryIndexes[product.category]++;
+            const discountedPrice = product.premium ? Math.round(product.price * 0.9) : product.price;
+            const premiumBadge = product.premium ? '<span class="discount-badge">10% OFF</span>' : "";
+            const originalPrice = product.premium
+                ? `<span class="product-original-price">${formatPrice(product.price)}</span>`
+                : "";
+            const displayName = product.category === "kids" ? "Kids' Collection" : `${product.category} Collection`;
+            const imageId = collectionImages[product.category][categoryIndex % collectionImages[product.category].length];
+            const imageUrl = `https://images.unsplash.com/${imageId}?auto=format&fit=crop&w=720&q=80`;
+            const palette = fabricPalettes[product.category];
+            const selectedColor = palette[categoryIndex % palette.length];
+            const colorSwatches = palette.map((color) => `
+                <button class="fabric-swatch" type="button" data-color="${color.name}" aria-label="Choose ${color.name}" aria-pressed="${color.name === selectedColor.name}" style="background-color:${color.hex}"></button>
+            `).join("");
+
+            return `
+                <article class="product-card" data-category="${product.category}" data-color="${selectedColor.name}">
+                    <div class="product-art" aria-hidden="true">
+                        <img src="${imageUrl}" alt="" loading="lazy" decoding="async">
+                        <span>${displayName}</span>
+                        <span>${product.premium ? "PREMIUM" : "MADE TO MEASURE"}</span>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">${categoryLabels[product.category]}</p>
+                        <h3>${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="fabric-colors">
+                            <span class="fabric-colors-label">Choose fabric colour</span>
+                            ${colorSwatches}
+                            <span class="fabric-color-name">${selectedColor.name}</span>
+                        </div>
+                        <div class="product-price-row">
+                            <span class="product-price">${formatPrice(discountedPrice)}</span>
+                            ${originalPrice}
+                            ${premiumBadge}
+                        </div>
+                        <button class="button product-book-button" type="button" data-product="${product.name}" data-category="${product.category}" data-price="${formatPrice(discountedPrice)}">Book this style <span aria-hidden="true">↗</span></button>
+                    </div>
+                </article>`;
+        }).join("");
+
+        document.querySelectorAll(".filter-button").forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedCategory = button.dataset.filter;
+                document.querySelectorAll(".filter-button").forEach((filterButton) => {
+                    filterButton.setAttribute("aria-pressed", String(filterButton === button));
+                });
+                productGrid.querySelectorAll(".product-card").forEach((card) => {
+                    card.hidden = selectedCategory !== "all" && card.dataset.category !== selectedCategory;
+                });
+            });
+        });
+
+        productGrid.addEventListener("click", (event) => {
+            const swatch = event.target.closest(".fabric-swatch");
+            if (swatch) {
+                const card = swatch.closest(".product-card");
+                card.dataset.color = swatch.dataset.color;
+                card.querySelectorAll(".fabric-swatch").forEach((option) => {
+                    option.setAttribute("aria-pressed", String(option === swatch));
+                });
+                card.querySelector(".fabric-color-name").textContent = swatch.dataset.color;
+                return;
+            }
+
+            const button = event.target.closest(".product-book-button");
+            if (!button) return;
+
+            const selectedCard = button.closest(".product-card");
+            document.querySelector("#service-type").value = `${button.dataset.category}-suit`;
+            document.querySelector("#customer-note").value = `Interested in: ${button.dataset.product} — ${button.dataset.price} THB. Fabric colour: ${selectedCard.dataset.color}.`;
+            document.querySelector("#book").scrollIntoView({ behavior: "smooth" });
+        });
+
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+            menuToggle.setAttribute("aria-expanded", String(!isOpen));
+            menuToggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+            navLinks.classList.toggle("is-open", !isOpen);
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("is-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation menu");
+            });
+        });
+
+        const visitDate = document.querySelector("#visit-date");
+        const today = new Date();
+        const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+        visitDate.min = localToday;
+
+        document.querySelector("#booking-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const customerName = form.elements.name.value.trim();
+            const message = document.querySelector("#form-message");
+            message.textContent = `Thanks, ${customerName}! Your fitting request is ready. Please contact the studio directly to confirm your appointment.`;
+            form.reset();
+            visitDate.min = localToday;
+        });
+    </script>
+</body>
+</html>
